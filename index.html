@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy Sig Code Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input[type="text"] {
+            width: calc(100% - 40px);
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: auto;
+            max-height: 200px;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        h1 {
+            margin-top: 0;
+            text-align: center;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pharmacy Sig Code Converter</h1>
+        <p>Enter a sig code to convert:</p>
+        <div class="dropdown">
+            <input type="text" id="sigCodeInput" placeholder="Enter sig code...">
+            <div class="dropdown-content" id="sigCodeDropdown">
+                <a href="#" onclick="insertSigCode('1qd')">1qd</a>
+                <a href="#" onclick="insertSigCode('2bid')">2bid</a>
+                <a href="#" onclick="insertSigCode('1q6hprn')">1q6hprn</a>
+                <!-- Add more sig codes here -->
+                <!-- Additional sig codes -->
+                <a href="#" onclick="insertSigCode('pc2timesdaily')">pc2timesdaily</a>
+                <a href="#" onclick="insertSigCode('inhale1puffq8h')">inhale1puffq8h</a>
+                <a href="#" onclick="insertSigCode('inhale1puffq6h')">inhale1puffq6h</a>
+                <a href="#" onclick="insertSigCode('inhale1puffbid')">inhale1puffbid</a>
+                <a href="#" onclick="insertSigCode('inhale2puffsqd')">inhale2puffsqd</a>
+                <a href="#" onclick="insertSigCode('inhale2puffsqam')">inhale2puffsqam</a>
+                <a href="#" onclick="insertSigCode('inhale2puffsqhs')">inhale2puffsqhs</a>
+                <a href="#" onclick="insertSigCode('inhale2puffsqid')">inhale2puffsqid</a>
+                <a href="#" onclick="insertSigCode('1tidpc')">1tidpc</a>
+                <a href="#" onclick="insertSigCode('1q8h')">1q8h</a>
+                <a href="#" onclick="insertSigCode('1q12h')">1q12h</a>
+                <a href="#" onclick="insertSigCode('1q6h')">1q6h</a>
+                <a href="#" onclick="insertSigCode('1qid')">1qid</a>
+                <a href="#" onclick="insertSigCode('1q3hprn')">1q3hprn</a>
+                <a href="#" onclick="insertSigCode('1qam')">1qam</a>
+                <a href="#" onclick="insertSigCode('1qpm')">1qpm</a>
+                <a href="#" onclick="insertSigCode('1bid')">1bid</a>
+                <a href="#" onclick="insertSigCode('1once')">1once</a>
+                <a href="#" onclick="insertSigCode('1daily')">1daily</a>
+                <a href="#" onclick="insertSigCode('1ac')">1ac</a>
+                <a href="#" onclick="insertSigCode('1pc')">1pc</a>
+                <a href="#" onclick="insertSigCode('1hs')">1hs</a>
+                <a href="#" onclick="insertSigCode('1prn')">1prn</a>
+                <a href="#" onclick="insertSigCode('1mane')">1mane</a>
+                <a href="#" onclick="insertSigCode('1nocte')">1nocte</a>
+                <a href="#" onclick="insertSigCode('1everyotherday')">1everyotherday</a>
+                <a href="#" onclick="insertSigCode('1qidac')">1qidac</a>
+                <a href="#" onclick="insertSigCode('1qidpc')">1qidpc</a>
+                <a href="#" onclick="insertSigCode('1qdac')">1qdac</a>
+                <a href="#" onclick="insertSigCode('1qdpc')">1qdpc</a>
+                <a href="#" onclick="insertSigCode('aaaqd')">aaaqd</a>
+                <a href="#" onclick="insertSigCode('aaabid')">aaabid</a>
+                <a href="#" onclick="insertSigCode('aaatid')">aaatid</a>
+                <a href="#" onclick="insertSigCode('aaaqid')">aaaqid</a>
+                <a href="#" onclick="insertSigCode('atqd')">atqd</a>
+                <a href="#" onclick="insertSigCode('atbid')">atbid</a>
+                <a href="#" onclick="insertSigCode('attid')">attid</a>
+                <a href="#" onclick="insertSigCode('atqid')">atqid</a>
+                <a href="#" onclick="insertSigCode('inhale1puffq4-6hprn')">inhale1puffq4-6hprn</a>
+                <a href="#" onclick="insertSigCode('inhale2puffsbid')">inhale2puffsbid</a>
+            </div>
+        </div>
+        <button onclick="convertSigCode()">Convert</button>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        var sigCodes = {
+            "1qd": "Take 1 tablet by mouth once daily",
+            "2bid": "Take 2 tablets by mouth twice daily",
+            "1q6hprn": "Take 1 capsule by mouth every 6 hours as needed",
+            "1q4-6hprn": "Take 1 tablet by mouth every 4 to 6 hours as needed",
+            "2qhs": "Take 2 tablets by mouth at bedtime",
+            "1tidpc": "Take 1 tablet by mouth three times daily after meals",
+            "1q8h": "Take 1 tablet by mouth every 8 hours",
+            "1q12h": "Take 1 tablet by mouth every 12 hours",
+            "1q6h": "Take 1 tablet by mouth every 6 hours",
+            "1qid": "Take 1 tablet by mouth four times daily",
+            "1q3hprn": "Take 1 tablet by mouth every 3 hours as needed",
+            "1qam": "Take 1 tablet by mouth in the morning",
+            "1qpm": "Take 1 tablet by mouth in the evening",
+            "1bid": "Take 1 tablet by mouth twice daily",
+            "1once": "Take 1 tablet by mouth once",
+            "1daily": "Take 1 tablet by mouth daily",
+            "1ac": "Take 1 tablet by mouth before meals",
+            "1pc": "Take 1 tablet by mouth after meals",
+            "1hs": "Take 1 tablet by mouth at bedtime",
+            "1prn": "Take 1 tablet by mouth as needed",
+            "1mane": "Take 1 tablet by mouth in the morning",
+            "1nocte": "Take 1 tablet by mouth at night",
+            "1everyotherday": "Take 1 tablet by mouth every other day",
+            "1qidac": "Take 1 tablet by mouth four times daily before meals",
+            "1qidpc": "Take 1 tablet by mouth four times daily after meals",
+            "1qdac": "Take 1 tablet by mouth once daily before meals",
+            "1qdpc": "Take 1 tablet by mouth once daily after meals",
+            "aaaqd": "Apply topically daily",
+            "aaabid": "Apply topically twice daily",
+            "aaatid": "Apply topically three times daily",
+            "aaaqid": "Apply topically four times daily",
+            "atqd": "Apply topically daily",
+            "atbid": "Apply topically twice daily",
+            "attid": "Apply topically three times daily",
+            "atqid": "Apply topically four times daily",
+            "inhale1puffq4-6hprn": "Inhale 1 puff every 4 to 6 hours as needed",
+            "inhale1puffq6h": "Inhale 1 puff every 6 hours",
+            "inhale2puffsqd": "Inhale 2 puffs by mouth once daily",
+            "inhale2puffsbid": "Inhale 2 puffs by mouth twice daily",
+            // Additional sig codes
+            "pc2timesdaily": "Take after meal 2 times daily",
+            "inhale1puffq8h": "Inhale 1 puff every 8 hours",
+            "inhale1puffbid": "Inhale 1 puff twice daily",
+            "inhale2puffsqam": "Inhale 2 puffs by mouth in the morning",
+            "inhale2puffsqhs": "Inhale 2 puffs by mouth at bedtime"
+        };
+
+        function insertSigCode(code) {
+            document.getElementById("sigCodeInput").value = code;
+        }
+
+        function convertSigCode() {
+            var sigCodeInput = document.getElementById("sigCodeInput").value.toLowerCase();
+            var outputDiv = document.getElementById("output");
+            var instruction = sigCodes[sigCodeInput];
+            if (instruction) {
+                outputDiv.innerHTML = "<p><strong>Converted:</strong> " + instruction + "</p>";
+            } else {
+                outputDiv.innerHTML = "<p><strong>Sig code not found</strong></p>";
+            }
+        }
+    </script>
+</body>
+</html>
